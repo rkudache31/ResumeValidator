@@ -9,9 +9,9 @@ app = Flask(__name__)
 # Azure Storage Account details
 account_name = "myserverstg"
 account_key = "+mipruK1Bg7VJupMMh8hP0cPZzmfNBXZKgFXkwKlOcYcsOiwNXz51oq2RGd4YAhkj13+mGTXHL1E+AStbvwa5Q=="
-container_name = "invoice"
+container_name = "unprocecedresume"
 
-@app.route('/upload', methods=['POST'])
+@app.route('/uploadresume', methods=['POST'])
 def upload_file():
     try:
                 # Check if files are present in the request
