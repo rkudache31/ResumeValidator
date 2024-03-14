@@ -14,11 +14,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 8000
 
 # Define environment variables
-ENV FLASK_APP=""uploadfile_jd.py""
+ENV FLASK_APP=""uploadfile.py""
 ENV FLASK_RUN_HOST="0.0.0.0"
 
 # Run the application
-CMD ["flask", "run"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8000"]

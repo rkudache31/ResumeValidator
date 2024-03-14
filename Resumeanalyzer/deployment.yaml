@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resumevalidate
+spec:
+  replicas: 3  # Number of replicas you want to run
+  selector:
+    matchLabels:
+      app: resumevalidate
+  template:
+    metadata:
+      labels:
+        app: resumevalidate
+    spec:
+      containers:
+      - name: resumevalidate
+        image: rkudache31/resumevalidater:v1  # Replace this with the image name you've built
+        ports:
+        - containerPort: 5000

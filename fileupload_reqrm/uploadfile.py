@@ -27,7 +27,7 @@ def upload_file():
         
         if  folder_exists:
 
-                # Check if files are present in the request
+                # Check if files are present in the request to test 
             if 'file' not in request.files:
                   return jsonify({"status": "error", "message": "No files provided"}), 400
 
@@ -65,4 +65,4 @@ def upload_file():
         return jsonify({"status": "error", "message": str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8000)
