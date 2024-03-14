@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify
 from azure.storage.blob import BlobServiceClient
 from urllib.parse import quote
-
+from flask_cors import CORS  # Import CORS from flask_cors module
 import os
 
 app = Flask(__name__)
-
+CORS(app)  # Enable CORS for all routes in your Flask app
 # Azure Storage Account details
 account_name = "myserverstg"
 account_key = "+mipruK1Bg7VJupMMh8hP0cPZzmfNBXZKgFXkwKlOcYcsOiwNXz51oq2RGd4YAhkj13+mGTXHL1E+AStbvwa5Q=="

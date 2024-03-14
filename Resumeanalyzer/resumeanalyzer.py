@@ -13,7 +13,7 @@ import requests
 app = Flask(__name__)
 
 # OpenAI API key
-openai.api_key = "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"
+openai.api_key = "<<---APIKey------------>>"
 
 def download_file(url, local_filename):
     with requests.get(url, stream=True) as response:

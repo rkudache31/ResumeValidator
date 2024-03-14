@@ -5,7 +5,7 @@ FROM python:3.8-slim
 WORKDIR /app
 
 # Set the OpenAI API key as an environment variable
-ENV OPENAI_API_KEY="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"
+ENV OPENAI_API_KEY="<<--API--->>"
 
 # Copy the local requirements.txt file to the container
 COPY requirements.txt .
