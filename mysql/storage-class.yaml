@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: azure-disk1
+provisioner: kubernetes.io/azure-disk
+parameters:
+  storageaccounttype: Standard_LRS  # Adjust based on your disk type

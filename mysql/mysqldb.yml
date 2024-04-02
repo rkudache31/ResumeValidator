@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-resume-validate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-resume-validate
+  template:
+    metadata:
+      labels:
+        app: mysql-resume-validate
+    spec:
+      containers:
+        - name: mysql-resume-validate
+          image: rkudache31/mysql_resume_validate_nw:v1
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "Test123"
+            - name: MYSQL_DATABASE
+              value: "resumedetails"
+            - name: MYSQL_USER
+              value: "hr"
+            - name: MYSQL_PASSWORD
+              value: "hr123"
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim1
